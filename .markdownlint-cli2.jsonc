@@ -1,0 +1,35 @@
+{
+  // Self-contained on purpose: this is a public repo, so it must not point at
+  // an absolute path in anyone's home directory.
+  "config": {
+    "default": true,
+    "MD013": false,
+    "MD024": false,
+    "MD036": false,
+    "MD041": false,
+    "MD060": false,
+    // The only raw HTML is the table between the BLACKJACK:START/END markers,
+    // written by .github/workflows/blackjack.yml via scripts/blackjack.py. The
+    // cards sit inside a pre: a table puts padding and a border around every
+    // cell, which would separate the felt each tile paints, and pre is the only
+    // element whose white-space survives GitHub's stripping of style. The hands
+    // played most recently are a table/code, since markdown cannot centre one
+    "MD033": {
+      "allowed_elements": [
+        "img",
+        "pre",
+        "div",
+        "p",
+        "table",
+        "thead",
+        "tbody",
+        "tr",
+        "th",
+        "td",
+        "code",
+        "em",
+        "a"
+      ]
+    }
+  }
+}
